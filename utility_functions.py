@@ -574,7 +574,7 @@ def run_param_tuned_soil(plant, param_factorial, obs_g, obs_g_t, obs_A, obs_A_t,
     return set_num, param_factorial[set_num, 0], param_factorial[set_num, 1], param_factorial[set_num, 2], param_factorial[set_num, 3], param_factorial[set_num, 4], param_factorial[set_num, 5], param_factorial[set_num, 6], param_factorial[set_num, 7], param_factorial[set_num, 8], param_factorial[set_num, 9], param_factorial[set_num, 10], param_factorial[set_num, 11], param_factorial[set_num, 12], param_factorial[set_num, 13], mean_g_diff, mean_lwp_diff, mean_md_lwp_diff, soil_diff, total_score, time_of_death
 
 def rand_historical_rainfall(n_trajectories, tmax, dt, start_doy, n, Zr):
-    dfN = pd.read_csv('Data_Downloads/Ninghan_Station.csv')
+    dfN = pd.read_csv('Ninghan_Station.csv')
     tRun = np.arange(0, tmax, dt)
     dfN['Date'] = pd.to_datetime(dfN[['Year', 'Month', 'Day']])
     upper_dates=dfN.Date.size-(2.0*tmax)
@@ -617,7 +617,7 @@ def rand_historical_rainfall(n_trajectories, tmax, dt, start_doy, n, Zr):
 def historical_rainfall(tmax, dt, start_doy, n, Zr):
     #finds all complete trajectories with a given starting date and length
     n_max_trajectories=150
-    dfN = pd.read_csv('Data_Downloads/Ninghan_Station.csv')
+    dfN = pd.read_csv('Ninghan_Station.csv')
     tRun = np.arange(0,tmax+dt,dt)
     dfN['Date'] = pd.to_datetime(dfN[['Year', 'Month', 'Day']])
     upper_dates=dfN.Date.size-(2.0*tmax)
